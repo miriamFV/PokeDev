@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">PokeDev</string>
+    <string name="title_home">Pokemon</string>
+
+    <!-- Bottom navigation activity menu -->
+    <string name="title_favorites">Favoritos</string>
+    <string name="title_profile">Perfil</string>
+
+    <!-- Item Home Strings -->
+    <string name="pokemon_id">#%d</string>
+    <string name="pokemon_specie">Especie: %s</string>
+    <string name="pokemon_weight">%s Kg</string>
+
+    <!-- Home Fragment Strings -->
+    <string name="need_internet_connection">Necesitas conexión a internet</string>
+
+    <!-- Detail Fragment Strings -->
+    <string name="pokemon_type">Tipo: %s</string>
+    <string name="pokemon_height">%s m</string>
+    <string name="description_title">Descripción:</string>
+    <string name="version_game">alpha-sapphire</string>
+    <string name="example_description">No se encuentra satisfecho hasta haber ingerido 400 kg de comida cada día.\nCuando acaba de comer, se queda dormido.</string>
+
+    <!-- Favorite Fragment Strings -->
+    <string name="no_favorite_pokemon">Aún no tienes pokemon favoritos</string>
+
+    <!-- Profile Fragment Strings -->
+    <string name="profile_name_title">Nombre</string>
+    <string name="profile_field_required">Obligatorio*</string>
+    <string name="profile_surname_title">Apellidos</string>
+    <string name="profile_gender_title">Género</string>
+    <string name="profile_birthday_title">Fecha de nacimiento</string>
+    <string name="gender_male">hombre</string>
+    <string name="gender_female">hombre</string>
+    <string-array name="genders">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Prefiero no decirlo</item>
+    </string-array>
+
+
+</resources>
