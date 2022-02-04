@@ -8,12 +8,14 @@ import com.example.data.database.entities.*
 import com.example.data.model.detail.PokemonDetailModel
 import com.example.data.model.detail.toPokemonDetailModel
 import com.example.data.remote.PokemonAPI
+import com.example.data.remote.PokemonSpeciesAPI
 import com.example.data.remote.ResultHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class PokemonRepository(
     private val pokemonAPI: PokemonAPI,
+    private val pokemonSpeciesAPI: PokemonSpeciesAPI,
     private val db: AppDatabase
 ) {
 
@@ -24,10 +26,11 @@ class PokemonRepository(
     }
 
     suspend fun getPokemonSpecies(idPokemon: Int): PokemonSpeciesModel {
-        return withContext(Dispatchers.IO){ pokemonAPI.getPokemonSpecies(idPokemon.toString()) }
+        return withContext(Dispatchers.IO){ pokemonSpeciesAPI.getPokemonSpecies(idPokemon.toString()) }
     }
 
     suspend fun getPokemonList(limInf: Int, limSup: Int): MutableList<PokemonDetailModel> {
+
         //Collect data from two endpoints and parse them to the data model we need
         val pokemonDetailList : MutableList<PokemonDetailModel> = arrayListOf()
 

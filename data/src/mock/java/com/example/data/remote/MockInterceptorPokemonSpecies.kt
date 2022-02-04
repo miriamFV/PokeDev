@@ -6,7 +6,7 @@ import okhttp3.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class MockInterceptorPokemon(private val context: Context) : Interceptor {
+class MockInterceptorPokemonSpecies(private val context: Context) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val response = Response.Builder().protocol(Protocol.HTTP_1_0).code(200).request(chain.request())
@@ -15,7 +15,7 @@ class MockInterceptorPokemon(private val context: Context) : Interceptor {
     }
 
     private fun addResponse(response: Response.Builder) {
-        val mockJson = getMockJSONResource(R.raw.pokemon_jigglypuff, context)
+        val mockJson = getMockJSONResource(R.raw.pokemon_species_jigglypuff, context)
         response.message(mockJson)
         response.body(ResponseBody.create(MediaType.get("application/json"),mockJson))
     }

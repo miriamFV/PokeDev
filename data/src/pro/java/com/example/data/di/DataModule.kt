@@ -10,7 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import androidx.room.Room
 import com.example.data.database.AppDatabase
+import com.example.data.remote.PokemonSpeciesAPI
 import com.example.data.repository.ProfileRepository
+import org.koin.core.qualifier.named
 
 val dataModule = module {
 
@@ -19,7 +21,6 @@ val dataModule = module {
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .build()
-
     }
 
     single<PokemonAPI>{
@@ -31,8 +32,18 @@ val dataModule = module {
             .create(PokemonAPI::class.java)
     }
 
+    single<PokemonSpeciesAPI>{
+        Retrofit.Builder()
+            .client(get())
+            .baseUrl(BuildConfig.SERVER_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(PokemonSpeciesAPI::class.java)
+    }
+
+
     single<PokemonRepository>{
-        PokemonRepository(get(), get())
+        PokemonRepository(get(), get(), get())
     }
 
     single {

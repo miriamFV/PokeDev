@@ -11,11 +11,8 @@ interface PokemonAPI {
     @GET("pokemon/{idPokemon}")
     suspend fun getPokemon(@Path("idPokemon") id: String):PokemonModel
 
-/*    @GET("pokemon/{idPokemon}")
-    suspend fun getPokemon(@Path("idPokemon") id: String):Response<PokemonModel>*/
-
-
+/*
     @GET("pokemon-species/{idPokemon}")
-    suspend fun getPokemonSpecies(@Path("idPokemon") id: String):PokemonSpeciesModel
+    suspend fun getPokemonSpecies(@Path("idPokemon") id: String):PokemonSpeciesModel*/
 
 }
