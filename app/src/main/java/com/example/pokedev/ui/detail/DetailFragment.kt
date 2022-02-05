@@ -9,10 +9,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import com.example.data.model.detail.PokemonDetailModel
 import com.example.data.utils.PokemonUtils
 import com.example.pokedev.R
-import com.example.pokedev.common.BaseFragment
-import com.example.pokedev.common.capitalize
-import com.example.pokedev.common.getColor
-import com.example.pokedev.common.getString
+import com.example.pokedev.common.*
 import com.example.pokedev.databinding.FragmentDetailBinding
 import com.squareup.picasso.Picasso
 
@@ -48,7 +45,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
             tvFragmentDetailWeight.text = R.string.pokemon_weight.getString(requireContext(),PokemonUtils.convertWeight(pokemon.weight)) //Weight
             tvFragmentDetailHeight.text = R.string.pokemon_height.getString(requireContext(),PokemonUtils.convertHeight(pokemon.height)) //Height
             tvFragmentDetailDescriptionBody.text = pokemon.description //Description
-            clFragmentDetail.setBackgroundColor(pokemon.getColor(requireContext())) //Background color
+            //clFragmentDetail.setBackgroundColor(pokemon.getColor(requireContext())) //Background color
+            clFragmentDetail.background = pokemon.getTypeBackground(requireContext())
         }
     }
 

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.data.model.detail.PokemonDetailModel
 import com.example.pokedev.R
-import com.example.pokedev.common.getColor
+import com.example.pokedev.common.getTypeBackground
 import com.example.pokedev.databinding.ItemHomeBinding
 import com.squareup.picasso.Picasso
 import java.util.*
@@ -57,7 +57,8 @@ class HomeAdapter(
                 tvItemHomeWeight.text = pokemondetailModel.weight.toString()
                 tvItemHomeSpecies.text = pokemondetailModel.specie
                 Picasso.get().load(pokemondetailModel.sprites.front_default).into(ivItemHomePokemon)
-                cvItemHome.setCardBackgroundColor(pokemondetailModel.getColor(context)) //background color
+                clItemHome.background = pokemondetailModel.getTypeBackground(context)//background color
+
             }
         }
     }

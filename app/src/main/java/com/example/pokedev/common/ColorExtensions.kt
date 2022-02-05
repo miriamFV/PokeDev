@@ -1,13 +1,47 @@
 package com.example.pokedev.common
 
 import android.content.Context
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import androidx.core.content.res.ResourcesCompat
 import com.example.data.model.detail.PokemonDetailModel
 import com.example.pokedev.R
 import java.util.*
 
 
-fun PokemonDetailModel.getColor(context: Context):Int{
-    return when (this.types[0].type.name.uppercase(Locale.getDefault())){
+enum class Types{
+    NORMAL, FIRE, WATER, ELECTRIC, GRASS, ICE, FIGHTING,
+    POISON, GROUND, FLYING, PSYCHIC, BUG, ROCK,
+    GHOST, DRAGON, DARK, STEEL, FAIRY
+}
+
+
+fun PokemonDetailModel.getTypeBackground(context:Context):Drawable{
+    //Returns a background that will be a color gradient if the pokemon has two or more types
+    // and a single color if it only has one type
+    if(this.types.size > 1){
+        var background = ResourcesCompat.getDrawable(context.resources, R.drawable.type_background_gradient, null) as GradientDrawable
+        var colorList = IntArray(this.types.size) // Create an integer array for the color associated with the type
+        this.types.forEachIndexed { index, types ->
+            println("colorList forEach: $index")
+            println("type: ${types.type.name}")
+            colorList[index] = getTypeColor(context,types.type.name)
+        }
+        //Reverse color list to fit with order of types written in detail fragment
+        background.colors = colorList.reversed().toIntArray()
+        return background.mutate()
+
+    }else{
+        var background = ResourcesCompat.getDrawable(context.resources, R.drawable.type_background, null) as GradientDrawable
+        background.setColor(getTypeColor(context,types[0].type.name))
+        return background
+    }
+}
+
+
+fun getTypeColor(context: Context, type:String):Int{
+    //Returns color corresponding with pokemon type
+    return when (type.uppercase(Locale.getDefault())){
         Types.NORMAL.name -> context.getColor(R.color.type_normal)
         Types.FIRE.name -> context.getColor(R.color.type_fire)
         Types.WATER.name -> context.getColor(R.color.type_water)
@@ -28,10 +62,4 @@ fun PokemonDetailModel.getColor(context: Context):Int{
         Types.FAIRY.name -> context.getColor(R.color.type_fairy)
         else -> context.getColor(R.color.secondary_text)
     }
-}
-
-enum class Types{
-    NORMAL, FIRE, WATER, ELECTRIC, GRASS, ICE, FIGHTING,
-    POISON, GROUND, FLYING, PSYCHIC, BUG, ROCK,
-    GHOST, DRAGON, DARK, STEEL, FAIRY
 }

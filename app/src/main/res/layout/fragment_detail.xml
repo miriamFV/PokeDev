@@ -4,195 +4,203 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/clFragmentDetail"
+
     android:paddingBottom="?attr/actionBarSize">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.03" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFragmentDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_medium">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
-
-    <ImageView
-        android:id="@+id/ivFragmentDetailPokemon"
-        android:layout_width="@dimen/big_size_image"
-        android:layout_height="@dimen/big_size_image"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
-        tools:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/tvFragmentDetailId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailPokemon"
-        tools:text="#143" />
-
-    <TextView
-        android:id="@+id/tvFragmentDetailName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailPokemon"
-        tools:text="Snorlax" />
-
-<!--    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/bFragmentDetailLike"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        app:lottie_rawRes="@raw/button_like_anim"
-        tools:lottie_autoPlay="true"
-        tools:lottie_loop="true"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailName"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailName"/>-->
-
-    <ImageButton
-        android:id="@+id/ibLike"
-        android:layout_width="@dimen/like_button_big_size"
-        android:layout_height="@dimen/like_button_big_size"
-        android:src="@drawable/ic_dislike_big"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailName"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailName"/>
-
-    <TextView
-        android:id="@+id/tvFragmentDetailSpecies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailId"
-        tools:text="Especie: Pokémon Dormir" />
-
-    <TextView
-        android:id="@+id/tvFragmentDetailTypes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailSpecies"
-        tools:text="Tipo: Normal" />
-
-    <ImageView
-        android:id="@+id/ivFragmentDetailWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/ic_weight_white"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailTypes" />
-
-    <TextView
-        android:id="@+id/tvFragmentDetailWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFragmentDetailWeight"
-        app:layout_constraintStart_toEndOf="@+id/ivFragmentDetailWeight"
-        app:layout_constraintTop_toTopOf="@+id/ivFragmentDetailWeight"
-        tools:text="460" />
-
-    <ImageView
-        android:id="@+id/ivFragmentDetailHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/ic_height_white"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailHeight"
-        app:layout_constraintEnd_toStartOf="@+id/tvFragmentDetailHeight"
-        app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailHeight" />
-
-    <TextView
-        android:id="@+id/tvFragmentDetailHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailWeight"
-        tools:text="2.1" />
-
-
-    <LinearLayout
-        android:id="@+id/llDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailWeight">
-
-        <TextView
-            android:id="@+id/tvFragmentDetailDescriptionTitle"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/description_title"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <ImageView
+            android:id="@+id/ivFragmentDetailPokemon"
+            android:layout_width="@dimen/big_size_image"
+            android:layout_height="@dimen/big_size_image"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline1"
+            tools:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvFragmentDetailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_very_big"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailPokemon"
+            tools:text="#143" />
+
+        <TextView
+            android:id="@+id/tvFragmentDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_very_big"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailPokemon"
+            tools:text="Snorlax" />
+
+        <!--    <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bFragmentDetailLike"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:lottie_rawRes="@raw/button_like_anim"
+                tools:lottie_autoPlay="true"
+                tools:lottie_loop="true"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailName"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailName"/>-->
+
+        <ImageButton
+            android:id="@+id/ibLike"
+            android:layout_width="@dimen/like_button_big_size"
+            android:layout_height="@dimen/like_button_big_size"
+            android:src="@drawable/ic_dislike_big"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailName"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailName"/>
+
+        <TextView
+            android:id="@+id/tvFragmentDetailSpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_very_big"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailId"
+            tools:text="Especie: Pokémon Dormir" />
 
         <TextView
-            android:id="@+id/tvFragmentDetailDescriptionBody"
+            android:id="@+id/tvFragmentDetailTypes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/margin_medium"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:text="@string/example_description" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailSpecies"
+            tools:text="Tipo: Normal" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/ivFragmentDetailWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:src="@drawable/ic_weight_white"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentDetailTypes" />
 
+        <TextView
+            android:id="@+id/tvFragmentDetailWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFragmentDetailWeight"
+            app:layout_constraintStart_toEndOf="@+id/ivFragmentDetailWeight"
+            app:layout_constraintTop_toTopOf="@+id/ivFragmentDetailWeight"
+            tools:text="460" />
+
+        <ImageView
+            android:id="@+id/ivFragmentDetailHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/ic_height_white"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFragmentDetailHeight"
+            app:layout_constraintEnd_toStartOf="@+id/tvFragmentDetailHeight"
+            app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailHeight" />
+
+        <TextView
+            android:id="@+id/tvFragmentDetailHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/tvFragmentDetailWeight"
+            tools:text="2.1" />
+
+
+        <LinearLayout
+            android:id="@+id/llDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/ivFragmentDetailWeight">
+
+            <TextView
+                android:id="@+id/tvFragmentDetailDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="@string/description_title"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvFragmentDetailDescriptionBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="@string/example_description" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

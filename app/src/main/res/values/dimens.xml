@@ -6,4 +6,19 @@
     <dimen name="big_size_image">200dp</dimen>
     <dimen name="like_button_big_size">60dp</dimen>
     <dimen name="like_button_medium_size">30dp</dimen>
+    <dimen name="corner_radius">16dp</dimen>
+    <!-- padding -->
+    <dimen name="padding_big">12dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_little">4dp</dimen>
+    <!-- margin -->
+    <dimen name="margin_huge">24dp</dimen>
+    <dimen name="margin_very_very_big">20dp</dimen>
+    <dimen name="margin_very_big">16dp</dimen>
+    <dimen name="margin_big">12dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_little">4dp</dimen>
+    <!-- elevation -->
+    <dimen name="elevation_big">15dp</dimen>
+    <dimen name="elevation_medium">10dp</dimen>
 </resources>

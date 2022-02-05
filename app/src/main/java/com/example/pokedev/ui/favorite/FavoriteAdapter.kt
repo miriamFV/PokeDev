@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.data.model.detail.PokemonDetailModel
 import com.example.pokedev.R
-import com.example.pokedev.common.getColor
+import com.example.pokedev.common.getTypeBackground
 import com.example.pokedev.databinding.ItemFavoriteBinding
 import com.squareup.picasso.Picasso
 import java.util.*
@@ -58,7 +58,7 @@ class FavoriteAdapter(
                 tvItemFavoriteWeight.text = pokemondetailModel.weight.toString()
                 tvItemFavoriteSpecies.text = pokemondetailModel.specie
                 Picasso.get().load(pokemondetailModel.sprites.front_default).into(ivItemFavoritePokemon)
-                cvItemFavorite.setCardBackgroundColor(pokemondetailModel.getColor(context)) //background color
+                clItemFavorite.background = pokemondetailModel.getTypeBackground(context)//background color
             }
         }
     }
