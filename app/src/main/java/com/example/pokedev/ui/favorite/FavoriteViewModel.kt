@@ -24,7 +24,7 @@ class FavoriteViewModel(
     private val liveNoFavoritesToShow = MutableLiveData<Boolean>()
     val obsNoFavoritesToShow = liveNoFavoritesToShow
 
-    private val livePokemonList by lazy { MutableLiveData <List<PokemonDetailModel>>() }
+    private val livePokemonList : MutableLiveData <List<PokemonDetailModel>> = MutableLiveData()
     val obsPokemonList : LiveData<List<PokemonDetailModel>> = livePokemonList
 
     fun onInit(){

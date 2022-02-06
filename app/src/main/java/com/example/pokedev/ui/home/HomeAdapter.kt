@@ -19,7 +19,7 @@ class HomeAdapter(
     private val mutablePokemonList : MutableList<PokemonDetailModel> = mutableListOf(*pokemonList.toTypedArray())
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return HomeViewHolder(binding)
     }
 

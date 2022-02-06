@@ -44,7 +44,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private fun setUpBinding(){
         vm.obsPokemonList.observe(viewLifecycleOwner){
             homeAdapter.updateList(it)
-            //binding.rvHome.adapter = homeAdapter
         }
     }
 

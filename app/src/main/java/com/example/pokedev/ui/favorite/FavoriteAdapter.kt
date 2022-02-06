@@ -18,7 +18,7 @@ class FavoriteAdapter(
     private val mutablePokemonList : MutableList<PokemonDetailModel> = mutableListOf(*pokemonList.toTypedArray())
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
-        val binding = ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return FavoriteViewHolder(binding)
     }
 

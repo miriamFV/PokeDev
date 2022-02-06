@@ -23,8 +23,6 @@ fun PokemonDetailModel.getTypeBackground(context:Context):Drawable{
         var background = ResourcesCompat.getDrawable(context.resources, R.drawable.type_background_gradient, null) as GradientDrawable
         var colorList = IntArray(this.types.size) // Create an integer array for the color associated with the type
         this.types.forEachIndexed { index, types ->
-            println("colorList forEach: $index")
-            println("type: ${types.type.name}")
             colorList[index] = getTypeColor(context,types.type.name)
         }
         //Reverse color list to fit with order of types written in detail fragment

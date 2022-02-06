@@ -21,7 +21,7 @@ class HomeViewModel(
     }
 
     private val LIM_INF = 1
-    private val LIM_SUP = 51
+    private val LIM_SUP = 80
 
 
     private val liveNoDataToShow = MutableLiveData<Boolean>()
